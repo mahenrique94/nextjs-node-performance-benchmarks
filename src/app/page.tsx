@@ -13,14 +13,14 @@ type Repository = {
 
 export default async function Home() {
   const response = await fetch(
-    "https://api.github.com/users/mahenrique94/repos?type=public&sort=updated&per_page=100"
+    "https://api.github.com/orgs/nearform/repos?type=public&sort=updated&per_page=100"
   );
   const repositories: Repository[] = await response.json();
 
   return (
     <main className="flex flex-col gap-8">
       <h2 className="text-sky-500 text-2xl">
-        My top 100 public projects (
+        Nearform top 100 public projects (
         <span className="text-lg text-sky-700">sorted by updated</span>)
       </h2>
       {repositories.map((repository) => (

@@ -2,7 +2,7 @@
 A simple project to collect and measure some performance metrics when using SSR from Next.
 
 ## Features
-The project has only a single feature (page) which is a list of the first 100 updated GitHub repositories for a specific user (me).
+The project has only a single feature (page) which is a list of the first 100 updated GitHub repositories for a specific org (Nearform).
 
 ## Metrics collected
 All the metrics it was collected by [WebPageTest](https://www.webpagetest.org/).
