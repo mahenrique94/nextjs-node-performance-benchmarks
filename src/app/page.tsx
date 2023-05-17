@@ -20,7 +20,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col gap-8">
       <h2 className="text-sky-500 text-2xl">
-        Nearform top 100 public projects (
+        NearForm top 100 public projects (
         <span className="text-lg text-sky-700">sorted by updated</span>)
       </h2>
       {repositories.map((repository) => (
