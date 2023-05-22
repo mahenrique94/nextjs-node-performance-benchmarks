@@ -1,3 +1,5 @@
+import data from "./data.json";
+
 type Repository = {
   description: string;
   full_name: string;
@@ -11,11 +13,16 @@ type Repository = {
   watchers_count: number;
 };
 
+async function getRepositories(): Promise<Repository[]> {
+  // https://api.github.com/orgs/nearform/repos?type=public&sort=updated&per_page=100
+  return data as Repository[];
+}
+
+export const fetchCache = "force-no-store";
+export const revalidate = 0;
+
 export default async function Home() {
-  const response = await fetch(
-    "https://api.github.com/orgs/nearform/repos?type=public&sort=updated&per_page=100"
-  );
-  const repositories: Repository[] = await response.json();
+  const repositories: Repository[] = await getRepositories();
 
   return (
     <main className="flex flex-col gap-8">
